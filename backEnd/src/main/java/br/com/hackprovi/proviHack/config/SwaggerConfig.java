@@ -19,13 +19,18 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.withClassAnnotation(RestController.class)).paths(PathSelectors.any())
+				.build().apiInfo(apiInfo());
+	}
+	
+	
+	
+	private ApiInfo apiInfo() {
+		return new ApiInfoBuilder().title("PCD TECH")
+				.description("Plataforma voltada para pessoas com deficiências cadastrarem seus curriculos.")
+				.version("1.0")
 				.build();
 	}
 	
-	
-	@SuppressWarnings("unused")
-	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("PCH TECH").description("Plataforma voltada para pessoas com deficiências cadastrarem seus curriculos.").version("1.0").build();
-	}
+
 }
 
