@@ -1,5 +1,0 @@
-package br.com.hackprovi.proviHack.components;
-
-public class JwtTokenEnhancer {
-
-}

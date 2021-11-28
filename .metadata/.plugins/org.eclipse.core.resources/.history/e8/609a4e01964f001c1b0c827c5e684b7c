@@ -1,5 +1,0 @@
-package br.com.hackprovi.proviHack.models.enums;
-
-public enum Nivel {
-
-}

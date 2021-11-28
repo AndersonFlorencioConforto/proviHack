@@ -1,1 +1,0 @@
-INSERT INTO tb_user (name, email, password,description,link) VALUES ('Anderson Conforto','anderson@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG','apenas um teste de inserção','teste');
