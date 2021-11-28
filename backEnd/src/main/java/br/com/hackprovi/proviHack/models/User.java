@@ -2,17 +2,21 @@ package br.com.hackprovi.proviHack.models;
 
 import java.io.Serializable;
 import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Entity
 @Table(name = "tb_user")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class User implements UserDetails, Serializable {
 	private static final long serialVersionUID = 1L;
 
