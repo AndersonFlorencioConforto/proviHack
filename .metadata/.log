@@ -1663,3 +1663,45 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:53:08.034
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.rEDLrIas => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:53:58.045
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:53:58.045
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@9622947[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:53:58.046
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.109
+!MESSAGE Boot LS startup time from start to initialized: 2061ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.181
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.CdMOKKdkisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.182
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.182
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.182
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.183
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.183
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.CdMOKKdk => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.195
+!MESSAGE classpath=115 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.200
+!MESSAGE buffering callback sts4.classpath.CdMOKKdk backEnd false 115
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.201
+!MESSAGE executing callback sts4.classpath.CdMOKKdk 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-11-27 22:54:00.541
+!MESSAGE executing callback sts4.classpath.CdMOKKdk SUCCESS [done]
