@@ -1,0 +1,5 @@
+package br.com.hackprovi.proviHack.services;
+
+public class UserService {
+
+}

@@ -1,0 +1,33 @@
+package br.com.hackprovi.proviHack.models;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Pdf {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@OneToMany(mappedBy = "pdf")
+	private List<User> user = new ArrayList<>();
+	
+	@Column(name = "mime_type")
+	private String mimeType;
+	
+	@Column(name = "size")
+	private long size = 0;
+
+	@Column(name = "hash", nullable = false, unique = true)
+	private String hash;
+	
+	public static final int RADIX = 16;
+
+}
