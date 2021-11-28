@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class User implements UserDetails, Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	//teste
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
