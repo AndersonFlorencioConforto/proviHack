@@ -1,5 +1,7 @@
 package br.com.hackprovi.proviHack.services;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
@@ -17,7 +19,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import br.com.hackprovi.proviHack.dtos.UriDTO;
 import br.com.hackprovi.proviHack.dtos.UserDto;
 import br.com.hackprovi.proviHack.dtos.UserInsertDto;
 import br.com.hackprovi.proviHack.dtos.UserUpdateDto;
@@ -33,6 +37,9 @@ public class UserService implements UserDetailsService {
 
 	@Autowired
 	private UserRepository repository;
+	
+	
+	@Autowired private S3Service s3Service;
 	
 
 	@Autowired
@@ -113,5 +120,12 @@ public class UserService implements UserDetailsService {
 		logger.info("Usuário encontrado " + username);
 		return user;
 	}
+
+	public UriDTO uploadFile(MultipartFile file) throws IOException {
+		URL url = s3Service.uploadFile(file);
+		return new UriDTO(url.toString());
+	}
+	
+	
 
 }

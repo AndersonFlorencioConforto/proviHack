@@ -45,7 +45,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 		.antMatchers(PUBLIC).permitAll()
 		.antMatchers(HttpMethod.GET, USER).permitAll()
 		.antMatchers(HttpMethod.POST, USER).permitAll()
-		.antMatchers(HttpMethod.DELETE, USER).permitAll()
+		.antMatchers("/users/image").authenticated()
+		.antMatchers(HttpMethod.DELETE, USER).authenticated()
 		.antMatchers(HttpMethod.PUT, USER).authenticated()
 		.anyRequest().authenticated();
 		

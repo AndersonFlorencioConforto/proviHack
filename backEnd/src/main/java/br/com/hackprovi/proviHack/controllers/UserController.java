@@ -1,7 +1,9 @@
 package br.com.hackprovi.proviHack.controllers;
 
 import java.net.URI;
+
 import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,10 +18,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import br.com.hackprovi.proviHack.dtos.UriDTO;
 import br.com.hackprovi.proviHack.dtos.UserDto;
 import br.com.hackprovi.proviHack.dtos.UserInsertDto;
 import br.com.hackprovi.proviHack.dtos.UserUpdateDto;
+import br.com.hackprovi.proviHack.models.User;
+import br.com.hackprovi.proviHack.repositories.UserRepository;
+import br.com.hackprovi.proviHack.services.AuthService;
 import br.com.hackprovi.proviHack.services.UserService;
 
 @RestController
@@ -29,6 +37,10 @@ public class UserController {
 	
 	@Autowired
     private UserService service;
+	
+	@Autowired private AuthService auth;
+	
+	@Autowired private UserRepository repository;
 	
 	
 	@GetMapping
@@ -69,6 +81,16 @@ public class UserController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    
+    @PostMapping(value = "/image")
+    public ResponseEntity<UriDTO> saveImage(@RequestParam("file") MultipartFile file) throws Exception {
+       	User user = auth.authenticated();
+    	UriDTO dto = service.uploadFile(file);
+    	user.setPhoto(dto.getUri());
+    	user = repository.save(user);
+        return ResponseEntity.ok().body(dto);
     }
 
 }
